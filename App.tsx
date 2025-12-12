@@ -5,7 +5,6 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import ConfigurationScreen from "./screens/ConfigurationScreen";
 import GameScreen from "./screens/GameScreen";
-import MovementList from "./screens/MovementList";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -25,8 +24,6 @@ export default function App() {
               iconName = focused ? "boat-outline" : "boat";
             } else if (route.name === "Configuration - screen") {
               iconName = focused ? "build-outline" : "build";
-            } else if (route.name === "Movements - list") {
-              iconName = focused ? "bookmark-outline" : "bookmarks";
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -39,7 +36,6 @@ export default function App() {
           name="Configuration - screen"
           component={ConfigurationScreen}
         />
-        <Tab.Screen name="Movements - list" component={MovementList} />
       </Tab.Navigator>
     </NavigationContainer>
   );
